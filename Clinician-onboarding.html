@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+<!-- Mirrored from thememinister.com/crm/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Jan 2025 19:50:53 GMT -->
+<head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Clinician Application and Onboarding</title>
+      <!-- Favicon and touch icons -->
+      <link rel="shortcut icon" href="assets/images/logo.webp" type="image/x-icon">
+      <!-- Start Global Mandatory Style
+         =====================================================================-->
+      <!-- jquery-ui css -->
+      <link href="assets/plugins/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
+      <!-- Bootstrap -->
+      <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+      <!-- Bootstrap rtl -->
+      <!--<link href="assets/bootstrap-rtl/bootstrap-rtl.min.css" rel="stylesheet" type="text/css"/>-->
+      <!-- Lobipanel css -->
+      <link href="assets/plugins/lobipanel/lobipanel.min.css" rel="stylesheet" type="text/css"/>
+      <!-- Pace css -->
+      <link href="assets/plugins/pace/flash.css" rel="stylesheet" type="text/css"/>
+      <!-- Font Awesome -->
+      <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+      <!-- Pe-icon -->
+      <link href="assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css" rel="stylesheet" type="text/css"/>
+      <!-- Themify icons -->
+      <link href="assets/themify-icons/themify-icons.css" rel="stylesheet" type="text/css"/>
+      <!-- End Global Mandatory Style
+         =====================================================================-->
+      <!-- Start page Label Plugins 
+         =====================================================================-->
+      <!-- Emojionearea -->
+      <link href="assets/plugins/emojionearea/emojionearea.min.css" rel="stylesheet" type="text/css"/>
+      <!-- Monthly css -->
+      <link href="assets/plugins/monthly/monthly.css" rel="stylesheet" type="text/css"/>
+      <!-- End page Label Plugins 
+         =====================================================================-->
+      <!-- Start Theme Layout Style
+         =====================================================================-->
+      <!-- Theme style -->
+      <link href="assets/dist/css/stylecrm.css" rel="stylesheet" type="text/css"/>
+      <!-- Theme style rtl -->
+      <!--<link href="assets/dist/css/stylecrm-rtl.css" rel="stylesheet" type="text/css"/>-->
+      <!-- End Theme Layout Style
+         =====================================================================-->
+         <style>
+            .step-indicator {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+            .step-indicator .circle {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                border-radius: 50%;
+                background-color: #ddd;
+                color: #000;
+                text-align: center;
+                font-weight: bold;
+            }
+            .step-indicator .circle.active {
+                background-color: #0d6efd;
+                color: #fff;
+            }
+            .step-indicator .line {
+                flex: 1;
+                height: 2px;
+                background-color: #ddd;
+                margin: 0 10px;
+            }
+            .step-indicator .line.active {
+                background-color: #0d6efd;
+            }
+        </style>
+       
+   </head>
+   <body class="hold-transition sidebar-mini">
+      <!--preloader-->
+      <div id="preloader">
+         <div id="status"></div>
+      </div>
+      <!-- Site wrapper -->
+      <div class="wrapper">
+         <header class="main-header">
+            <a href="index-.html" class="logo">
+               <!-- Logo -->
+               <span class="logo-mini">
+               <img src="assets/images/logo.webp" alt="">
+               </span>
+               <span class="logo-lg">
+               <img src="assets/images/website.png" alt="">
+               </span>
+            </a>
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+               <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                  <!-- Sidebar toggle button-->
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="pe-7s-angle-left-circle"></span>
+               </a>
+               <!-- searchbar-->
+               <a href="#search"><span class="pe-7s-search"></span></a>
+               <div id="search">
+                 <button type="button" class="close">×</button>
+                 <form>
+                   <input type="search" value="" placeholder="Search.." />
+                   <button type="submit" class="btn btn-add">Search...</button>
+                </form>
+             </div>
+             <div class="navbar-custom-menu">
+                  <ul class="nav navbar-nav">
+              
+                     <!-- user -->
+                     <li class="dropdown dropdown-user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="assets/dist/img/avatar5.png" class="img-circle" width="45" height="45" alt="user"></a>
+                        <ul class="dropdown-menu" >
+                           <li>
+                              <a href="profile.html">
+                              <i class="fa fa-user"></i> User Profile</a>
+                           </li>
+                           <li><a href="message.html"><i class="fa fa-inbox"></i> Inbox</a></li>
+                           <li><a href="login.html">
+                              <i class="fa fa-sign-out"></i> Signout</a>
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+               </div>
+            </nav>
+         </header>
+         <!-- =============================================== -->
+         <!-- Left side column. contains the sidebar -->
+         <aside class="main-sidebar">
+            <!-- sidebar -->
+            <div class="sidebar">
+               <!-- sidebar menu -->
+               <ul class="sidebar-menu">
+                  <li class="active">
+                     <a href="index.html"><i class="fa fa-tachometer"></i><span>Dashboard</span>
+                     <span class="pull-right-container">
+                     </span>
+                     </a>
+                  </li>
+                  <li class="treeview">
+                     <a href="#">
+                     <i class="fa fa-users"></i><span>Booking & Intake</span>
+                     <span class="pull-right-container">
+                     <i class="fa fa-angle-left pull-right"></i>
+                     </span>
+                     </a>
+                     <ul class="treeview-menu">
+                        <li><a href="create-booking.html">Create Booking</a></li>
+                        <li><a href="initial-intake-form.html">Intake Form</a></li>
+                        <li><a href="submission-workflow.html">Submission Workflow</a></li>
+                     </ul>
+                  </li>
+                  <li class="treeview">
+                     <a href="#">
+                        <i class="fa fa-file-text"></i><span>Insurance Verification</span>
+                     <span class="pull-right-container">
+                     <i class="fa fa-angle-left pull-right"></i>
+                     </span>
+                     </a>
+                     <ul class="treeview-menu">
+                        <li><a href="verification-task.html">Tasks</a></li>
+                        <li><a href="verification-status-update.html">Status Update</a></li>
+                        <li><a href="authorization-letter.html">Authorization Letter</a></li>
+                     
+                     </ul>
+                  </li>
+                  <li class="treeview">
+                     <a href="#">
+                        <i class="fa fa-user-circle"></i><span>Client Portal</span>
+                     <span class="pull-right-container">
+                     <i class="fa fa-angle-left pull-right"></i>
+                     </span>
+                     </a>
+                     <ul class="treeview-menu">
+                        <li><a href="client-login.html">Login</a></li>
+                        <li><a href="client-portal.html">Portal</a></li>
+                        
+                    
+                     </ul>
+                  </li>
+                  <li class="treeview">
+                     <a href="office-manager-task.html">
+                     <i class="fa fa-book"></i><span>Office Manager Tasks</span>
+                     </a>
+                  </li>
+                  <li class="treeview">
+                     <a href="Reminder-consent.html">
+                        <i class="fa fa-bell"></i><span>Reminders & Consent</span>
+                    
+                     </a>
+                   
+                  </li>
+                  <li class="treeview">
+                     <a href="Clinician-onboarding.html">
+                     <i class="fa fa-file-text"></i><span>Clinician Onboarding</span>
+                    
+                     </a>
+                   
+                  </li>
+                  <li class="treeview">
+                     <a href="#">
+                        <i class="fa fa-users"></i><span>Staff Portal</span>
+                     <span class="pull-right-container">
+                     <i class="fa fa-angle-left pull-right"></i>
+                     </span>
+                     </a>
+                     <ul class="treeview-menu">
+                        <li><a href="staff-profile-management.html">Profile Management</a></li>
+                        <li><a href="staff-appointment-tracking.html">Appointment Tracking</a></li>
+                        <li><a href="staff-documentation.html">Therapy Notes</a></li>
+                     </ul>
+                  </li>
+                  <li class="treeview">
+                     <a href="#">
+                     <i class="fa fa-edit"></i><span>Client Services & Billing</span>
+                     <span class="pull-right-container">
+                     <i class="fa fa-angle-left pull-right"></i>
+                     </span>
+                     </a>
+                     <ul class="treeview-menu">
+                        <li><a href="client-services.html">Client Services</a></li>
+                        <li><a href="billing.html">Billing</a></li>
+                     </ul>
+                  </li>
+                  <li class="treeview">
+                     <a href="Referrals.html">
+                        <i class="fa fa-list"></i><span>Referrals</span>
+                    
+                     </a>
+                     
+                  </li>
+           
+               </ul>
+            </div>
+            <!-- /.sidebar -->
+         </aside>
+         <!-- =============================================== -->
+         <!-- Content Wrapper. Contains page content -->
+         <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+        
+            <!-- Main content -->
+            <section class="content-header">
+               <div class="header-icon">
+                  <i class="fa fa-users"></i>
+               </div>
+               <div class="header-title">
+                  <h1>Clinician Application and Onboarding</h1>
+                  <small>Clinician Onboarding</small>
+               </div>
+            </section>
+            <section class="content">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="panel panel-bd lobidrag">
+                      <div class="panel-heading">
+                     
+                      </div>
+                      <div class="panel-body">
+                        <div class="container mt-5">
+                          
+                        
+                            <div class="step-indicator">
+                                <div class="circle active">1</div>
+                                <div class="line"></div>
+                                <div class="circle">2</div>
+                            </div>
+                        
+                            <div id="step1" class="step">
+                                <h4>Step 1: Application Portal</h4>
+                                <form id="applicationForm">
+                                    <div class="mb-3">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="credentials" class="form-label">Credentials</label>
+                                        <input type="text" id="credentials" class="form-control" placeholder="Enter your credentials" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="licensure" class="form-label">Licensure</label>
+                                        <input type="text" id="licensure" class="form-control" placeholder="Enter your licensure details" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="availability" class="form-label">Availability</label>
+                                        <input type="text" id="availability" class="form-control" placeholder="Enter your availability" required>
+                                    </div>
+                                    <div class="d-grid mt-5">
+                                        <button type="button" class="btn btn-primary" onclick="goToStep2()">Next Step</button>
+                                    </div>
+                                </form>
+                            </div>
+                        
+                            <div id="step2" class="step d-none">
+                                <h4>Step 2: Interview & Onboarding</h4>
+                                <form id="onboardingForm">
+                                    <div class="mb-3">
+                                        <label for="interviewDate" class="form-label">Schedule Online Interview</label>
+                                        <input type="datetime-local" id="interviewDate" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="documents" class="form-label">Upload Onboarding Documents</label>
+                                        <input type="file" id="documents" class="form-control" multiple>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="orientation" class="form-label">Schedule Online Orientation</label>
+                                        <input type="datetime-local" id="orientation" class="form-control" required>
+                                    </div>
+                                    <div class="d-grid mt-5">
+                                        <button type="submit" class="btn btn-success">Submit & Complete</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            <!-- /.content -->
+         </div>
+         <!-- /.content-wrapper -->
+        
+      </div>
+      <!-- /.wrapper -->
+      <!-- Start Core Plugins
+         =====================================================================-->
+      <!-- jQuery -->
+      <script src="assets/plugins/jQuery/jquery-1.12.4.min.js" type="text/javascript"></script>
+      <!-- jquery-ui --> 
+      <script src="assets/plugins/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+      <!-- Bootstrap -->
+      <script src="assets/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+      <!-- lobipanel -->
+      <script src="assets/plugins/lobipanel/lobipanel.min.js" type="text/javascript"></script>
+      <!-- Pace js -->
+      <script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>
+      <!-- SlimScroll -->
+      <script src="assets/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript">    </script>
+      <!-- FastClick -->
+      <script src="assets/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
+      <!-- CRMadmin frame -->
+      <script src="assets/dist/js/custom.js" type="text/javascript"></script>
+      <!-- End Core Plugins
+         =====================================================================-->
+      <!-- Start Page Lavel Plugins
+         =====================================================================-->
+      <!-- ChartJs JavaScript -->
+      <script src="assets/plugins/chartJs/Chart.min.js" type="text/javascript"></script>
+      <!-- Counter js -->
+      <script src="assets/plugins/counterup/waypoints.js" type="text/javascript"></script>
+      <script src="assets/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
+      <!-- Monthly js -->
+      <script src="assets/plugins/monthly/monthly.js" type="text/javascript"></script>
+      <!-- End Page Lavel Plugins
+         =====================================================================-->
+      <!-- Start Theme label Script
+         =====================================================================-->
+      <!-- Dashboard js -->
+      <script src="assets/dist/js/dashboard.js" type="text/javascript"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- End Theme label Script
+         =====================================================================-->
+         <script>
+            function goToStep2() {
+               
+                const form = document.getElementById('applicationForm');
+                if (form.checkValidity()) {
+                    document.getElementById('step1').classList.add('d-none');
+                    document.getElementById('step2').classList.remove('d-none');
+                    document.querySelector('.step-indicator .circle:nth-child(1)').classList.remove('active');
+                    document.querySelector('.step-indicator .line').classList.add('active');
+                    document.querySelector('.step-indicator .circle:nth-child(3)').classList.add('active');
+                } else {
+                    form.reportValidity();
+                }
+            }
+        
+            document.getElementById('onboardingForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Clinician application and onboarding completed successfully!');
+                window.location.replace("index.html");
+            });
+        </script>
+        
+   </body>
+
+<!-- Mirrored from thememinister.com/crm/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 13 Jan 2025 19:51:24 GMT -->
+</html>
+
+
