@@ -66,16 +66,17 @@
                 line-height: 30px;
             }
             .step-indicator .step.completed .step-circle {
-                background-color: #28a745;
+                background-color: #0d6efd;
                 color: white;
             }
             .step-indicator .step.active .step-circle {
-                background-color: #17a2b8;
+                background-color: #0d6efd;
                 color: white;
             }
         </style>
    </head>
    <body class="hold-transition sidebar-mini">
+      
       <!--preloader-->
       <div id="preloader">
          <div id="status"></div>
@@ -120,7 +121,7 @@
                               <a href="profile.html">
                               <i class="fa fa-user"></i> User Profile</a>
                            </li>
-                           <li><a href="message.html"><i class="fa fa-inbox"></i> Inbox</a></li>
+                           
                            <li><a href="login.html">
                               <i class="fa fa-sign-out"></i> Signout</a>
                            </li>
@@ -244,11 +245,14 @@
          <!-- Content Wrapper. Contains page content -->
          <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-        
+      
             <!-- Main content -->
             <section class="content">
                 <div class="row">
                   <div class="col-sm-12">
+                     <div class="alert-container">
+         
+                     </div>
                     <div class="panel panel-bd lobidrag">
                       <div class="panel-heading">
                      
@@ -403,7 +407,10 @@
                 e.preventDefault();
                 const clientStatus = document.getElementById('clientStatus').value;
                 if (clientStatus === 'customer') {
-                    alert('Client converted to Customer!');
+                   document.querySelector('.alert-container').innerHTML=`<div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <strong>Success!</strong> Client Coverted to Customer.
+                                 </div>`;
                     moveToNextStep(2);
                 }
             });
@@ -414,10 +421,16 @@
                 const clientReady = document.getElementById('clientReady').checked;
                 const clinician = document.getElementById('clinicianAvailability').value;
                 if (clientReady) {
-                    alert('Booking Link sent to the client with Consent Forms for ' + clinician);
+                  document.querySelector('.alert-container').innerHTML=`<div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <strong>Success!</strong> Booking Link sent to the client with Consent Forms for ${clinician}.
+                                 </div>`;
                     moveToNextStep(3);
                 } else {
-                    alert('Client is not ready for services.');
+                  document.querySelector('.alert-container').innerHTML=`<div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <strong>Error!</strong> Client is not ready for services..
+                                 </div>`;
                 }
             });
         
@@ -426,10 +439,16 @@
                 e.preventDefault();
                 const clientCompletedForms = document.getElementById('clientCompletedForms').checked;
                 if (clientCompletedForms) {
-                    alert('Clinician confirmed the appointment!');
+                  document.querySelector('.alert-container').innerHTML=`<div class="alert alert-success alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <strong>Success!</strong> Clinician confirmed the appointment!.
+                                 </div>`;
                     moveToNextStep(4); // After confirmation, if needed, you can redirect or show a summary.
                 } else {
-                    alert('Client has not completed the forms yet.');
+                  document.querySelector('.alert-container').innerHTML=`<div class="alert alert-danger alert-dismissible" role="alert">
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <strong>Error!</strong> Client has not completed the form yet.
+                                 </div>`;
                 }
             });
         
